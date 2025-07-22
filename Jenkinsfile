@@ -1,19 +1,13 @@
-pipeline {
-    agent any
+node {
+    stage('Build') {
+        echo 'Building the application...'
+    }
 
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git url: 'https://github.com/Kiruthik25/Jenkins-demo.git', branch: 'testing'
-            }
-        }
+    stage('Test') {
+        echo 'Running tests...'
+    }
 
-        stage('Run Script') {
-            steps {
-                sh 'chmod +x script.sh'
-                sh './script.sh'
-            }
-        }
+    stage('Deploy') {
+        echo 'Deploying application...'
     }
 }
-

@@ -12,6 +12,7 @@ node {
     
 }
    stage('Production'){
+echo 'done with code'
 echo 'Production code......'
 }
 }

@@ -1,20 +1,19 @@
 pipeline {
     agent any
+
     stages {
-        stage('Build') {
+        stage('Clone Repository') {
             steps {
-                echo "Building the project from MAIN branch..."
+                git url: 'https://github.com/your-username/your-repo.git', branch: 'main'
             }
         }
-        stage('Test') {
+
+        stage('Run Script') {
             steps {
-                echo "Running tests..."
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying to production!"
+                sh 'chmod +x script.sh'
+                sh './script.sh'
             }
         }
     }
 }
+

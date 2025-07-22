@@ -9,5 +9,9 @@ node {
 
     stage('Deploy') {
         echo 'Deploying application...'
-    }
+    
+}
+   stage('Production'){
+echo 'Production code......'
+}
 }

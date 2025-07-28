@@ -1,24 +1,20 @@
-node {
-    stage('Build') {
-        echo 'Building the application...'
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building the project from MAIN branch..."
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Running tests..."
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying to production!"
+            }
+        }
     }
-
-    stage('Test') {
-        echo 'Running tests...'
-    }
-
-    stage('Deploy') {
-        echo 'Deploying application...'
-    
-}
-   stage('Production'){
-	
-     steps {
-	echo 'done with code'
-	echo "done done'
-	echo '1'
-
-	echo 'Production code......'
-}
-
 }
